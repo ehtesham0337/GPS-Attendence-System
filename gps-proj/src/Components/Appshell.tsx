@@ -10,7 +10,7 @@ import {
   Burger,
   useMantineTheme,
 } from '@mantine/core';
-import AttendeeEventTiles from '../Pages/Attendee';
+import AttendeeEventTiles from '../Pages/AttendeeEvents';
 
 export default function AppShellDemo() {
   const theme = useMantineTheme();

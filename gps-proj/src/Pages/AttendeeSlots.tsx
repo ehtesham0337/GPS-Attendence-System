@@ -15,8 +15,11 @@ import {
   ReactFragment,
   ReactPortal,
 } from "react";
+import { Flask } from "tabler-icons-react";
 
-function AttendeeEventTiles(props: {
+import HeaderDemo from "../Components/header";
+
+function AttendeeEventSlots(props: {
   head:
     | string
     | number
@@ -60,8 +63,34 @@ function AttendeeEventTiles(props: {
     theme.colorScheme === "dark" ? theme.colors.dark[1] : theme.colors.gray[7];
 
   const [opened, setOpened] = useState(false);
+  const [attendence, setAttendence] = useState(false);
+
+  function markAttendence() {
+    setAttendence(true);
+    return console.log("Attendence Marked");
+  }
+  // function notBadge(){
+  //     return(
+  //     <Badge color="red" variant="outline">
+  //     Attendence Not Open
+  //   </Badge>
+  //     )
+  // }
+
+  // function DisableBadge(props:{attStatus: boolean;}){
+
+  //     if (props.attStatus === false){
+  //         return(
+  //             <>
+  //             <Badge color="red" variant="outline">
+  //     Attendence Not Open
+  //   </Badge>
+  //   </>
+  //         )
+
   return (
     <div>
+      <HeaderDemo />
       <Space h="xl" />
       <Space w="xl" />
       <Card
@@ -82,26 +111,39 @@ function AttendeeEventTiles(props: {
           style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
         >
           <Text weight={500}>{props.head}</Text>
-          <Badge color="red" variant="outline">
-            On Sale
-          </Badge>
+
+          <Group>
+            <Badge hidden color="red" variant="outline">
+              Attendence Not Open
+            </Badge>
+            <Badge
+              onClick={() => setAttendence(false)}
+              color="green"
+              variant="outline"
+            >
+              Attendence Open
+            </Badge>
+          </Group>
         </Group>
 
         <Text size="sm" style={{ color: secondaryColor, lineHeight: 1.5 }}>
           {/* Name: {props.name} {<br/>}  */}
-          Description: {props.description} {<br />}
-          Attendees: {props.attendees} {<br />}
-          Organizer: {props.organizer} {<br />}
+          Start Time: {props.description} {<br />}
+          End Time: {props.attendees} {<br />}
+          Credit Hours: {props.organizer} {<br />}
         </Text>
 
         <Button
-          variant="light"
+          className="markAttendence"
+          variant="gradient"
+          gradient={{ from: "teal", to: "blue", deg: 60 }}
+          disabled={attendence}
           color="blue"
           fullWidth
           style={{ marginTop: 14 }}
-          onClick={() => setOpened(true)}
+          onClick={() => markAttendence()}
         >
-          View Slots and Attendence
+          Mark Attendence
         </Button>
       </Card>
 
@@ -124,17 +166,16 @@ function AttendeeEventTiles(props: {
           color="violet"
           radius="xl"
           size="md"
-          style={{ margin: "0 40%", justifySelf:'center'}}
+          style={{ margin: "0 36%", justifySelf: "center" }}
         >
           Slots
         </Button>
-        <Space h={20}/>
+        <Space h={20} />
         <Button
-        
           color="violet"
           radius="xl"
           size="md"
-          style={{ margin: "0 35%", justifySelf:'center'}}
+          style={{ margin: "0 30%", justifySelf: "center" }}
         >
           Attendence
         </Button>
@@ -142,4 +183,4 @@ function AttendeeEventTiles(props: {
     </div>
   );
 }
-export default AttendeeEventTiles;
+export default AttendeeEventSlots;
