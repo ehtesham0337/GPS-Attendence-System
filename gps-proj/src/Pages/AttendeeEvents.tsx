@@ -17,6 +17,7 @@ import {
 } from "react";
 
 import HeaderDemo from "../Components/header";
+import { Link } from "react-router-dom";
 
 function AttendeeEventTiles(props: {
   head:
@@ -99,7 +100,7 @@ function AttendeeEventTiles(props: {
         </Text>
 
         <Button
-          variant="light"
+           variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}
           color="blue"
           fullWidth
           style={{ marginTop: 14 }}
@@ -124,17 +125,21 @@ function AttendeeEventTiles(props: {
         onClose={() => setOpened(false)}
         title="View:"
       >
+        <Link to="AttendeeSlots">
         <Button
           color="violet"
           radius="xl"
           size="md"
           style={{ margin: "0 36%", justifySelf:'center'}}
+          
         >
           Slots
         </Button>
+        </Link>
         <Space h={20}/>
+
+        <Link to="AttendeeAttendence">
         <Button
-        
           color="violet"
           radius="xl"
           size="md"
@@ -142,6 +147,7 @@ function AttendeeEventTiles(props: {
         >
           Attendence
         </Button>
+        </Link>
       </Modal>
     </div>
   );

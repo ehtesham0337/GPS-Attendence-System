@@ -1,10 +1,5 @@
 import { useState } from 'react';
 
-
-
-
-
-
 const GetUserLocation = () =>  {
   const [lat, setLat] = useState(null);
   const [lng, setLng] = useState(null);

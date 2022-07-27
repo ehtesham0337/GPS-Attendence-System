@@ -6,12 +6,13 @@ import {
   Box,
   Paper,
   Text,
-  Center
+  Center,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useState } from "react";
 import { PasswordInput } from "@mantine/core";
 import { Container } from "@mantine/core";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   // const [valuePass, setValuePass] = useState('');
@@ -28,21 +29,28 @@ function SignUp() {
   });
 
   return (
-    <Container style={{display: 'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
-    <Center style={{ width: 400, height: 200}}>
-      <Paper>
-        <Text
-          component="span"
-          align="center"
-          variant="gradient"
-          gradient={{ from: "blue", to: "teal", deg: 45 }}
-          size="xl"
-          weight={900}
-          style={{ fontFamily: "Greycliff CF, sans-serif", margin: 0 }}
-        >
-          Sign Up / Login
-        </Text>
-      </Paper>
+    <Container
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Center style={{ width: 400, height: 200 }}>
+        <Paper>
+          <Text
+            component="span"
+            align="center"
+            variant="gradient"
+            gradient={{ from: "blue", to: "teal", deg: 45 }}
+            size="xl"
+            weight={900}
+            style={{ fontFamily: "Greycliff CF, sans-serif", margin: 0 }}
+          >
+            Sign Up / Login
+          </Text>
+        </Paper>
       </Center>
       <Box sx={{ maxWidth: 300 }} mx="auto">
         <form onSubmit={form.onSubmit((values) => console.log(values))}>
@@ -67,14 +75,22 @@ function SignUp() {
             required
             {...form.getInputProps("pass")}
           />
+
           <Group position="right" mt="md">
             <Button type="submit">Submit</Button>
           </Group>
         </form>
+        <Group position="center" mt="md">
+        <Link to="/AttendeeEvents">
+          <Button>Proceed</Button>
+        </Link>
+        
+        <Link to="/OrganizerEvents">
+          <Button>Proceed as Org</Button>
+        </Link>
+        </Group>
       </Box>
     </Container>
-
-
   );
 }
 

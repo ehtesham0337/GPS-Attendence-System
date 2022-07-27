@@ -113,6 +113,7 @@ function AttendeeEventSlots(props: {
           <Text weight={500}>{props.head}</Text>
 
           <Group>
+            {" "}
             <Badge hidden color="red" variant="outline">
               Attendence Not Open
             </Badge>
