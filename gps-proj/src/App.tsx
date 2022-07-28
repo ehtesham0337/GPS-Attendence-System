@@ -33,7 +33,7 @@ import OrganizerViewSlotAttendence from "./Pages/OrganizerAttendenceView";
 import Lemme from "./Pages/APItest";
 import { title } from "process";
 
-import data from "./data/attendeeData.json";
+import data from "./data/attendeeEventData.json";
 
 import Login from "./Components/Login/Login";
 import useToken from "./Components/useToken";
@@ -130,21 +130,38 @@ const Dum = () => <><h1>Helo</h1></>
         <Routes>
           {/* <Route path="/" element={<Dum />} /> */}
 
-{movieData.map((attdd : any ) => {
-        return(
-          <Route
-            path="/AttendeeEvents"
-            element={
-              <AttendeeEventTiles
-                head={attdd.data}
+ {/* {data.map ((attdd : any )   =>  {
+ 
+   return(
+        <div key={attdd.id}> 
+          <Route 
+            path="/AttendeeEvents"  
+            element ={ 
+              <AttendeeEventTiles 
+                head={attdd.name}
                 description="Stats"
                 attendees={50}
                 organizer="Sir Daniyal"
               />
             }
+
+
           />
+          </div>
         )
-        })}
+        
+        })}   */}
+      <Route
+            path="/AttendeeEvents"
+            element={
+              <AttendeeEventTiles
+                head="stattsss"
+                description="Stats"
+                attendees={50}
+                organizer="Sir Daniyal"
+              />
+            }
+            /> 
           <Route
             path="/AttendeeEvents/AttendeeSlots"
             element={

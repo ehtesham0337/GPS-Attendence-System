@@ -77,7 +77,7 @@ function OrganizerEventSlots(props: {
   const [timer, setTimer] = useState(false);
 
   function markAttendence() {
-    props.setAttd(true);
+    setAttendence(true);
     return console.log("Attendence Marked");
   }
 
@@ -262,7 +262,7 @@ function OrganizerEventSlots(props: {
           className="markAttendence"
           variant="gradient"
           gradient={{ from: "teal", to: "blue", deg: 60 }}
-          disabled={props.attd}
+          disabled={attendence}
           color="blue"
           fullWidth
           style={{ marginTop: 14 }}

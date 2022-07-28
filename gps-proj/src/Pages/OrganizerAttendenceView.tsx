@@ -2,17 +2,19 @@ import { Table } from "@mantine/core";
 
 function OrganizerViewSlotAttendence() {
   const elements = [
-    { position: 6, mass: 12.011, symbol: "C", name: "Carbon" },
-    { position: 7, mass: 14.007, symbol: "N", name: "Nitrogen" },
-    { position: 39, mass: 88.906, symbol: "Y", name: "Yttrium" },
-    { position: 56, mass: 137.33, symbol: "Ba", name: "Barium" },
-    { position: 58, mass: 140.12, symbol: "Ce", name: "Cerium" },
+    { position: "ali", mass: 12.011, time: "17:52", name:     7, distance:8},
+    { position: "Ahmad", mass: 14.007, time: "17:50", name:   15  ,distance:5},
+    { position: "Shakeel", mass: 88.906, time: "17:49:", name: 25 , distance:1},
+    { position: "Mehmood", mass: 137.33, time: "17:53", name:30 , distance:3},
+    { position: "Nabeel", mass: 140.12, time: "17:20", name: 19, distance:7},
   ];
   const rows = elements.map((element) => (
     <tr key={element.name}>
       <td>{element.position}</td>
-      <td>{element.name}</td>
-      <td>{element.symbol}</td>
+      <td>{element.name + " / 30"}</td>
+      <td>{(element.name / 30) *100 +"%"} </td>
+      <td>{element.time}</td>
+      <td>{element.distance}</td>
      
 
     </tr>
