@@ -7,9 +7,11 @@ import {
   useMantineTheme,
   Space,
   Modal,
+  Paper
 } from "@mantine/core";
 import {
   useState,
+  useEffect,
   ReactElement,
   JSXElementConstructor,
   ReactFragment,
@@ -18,9 +20,22 @@ import {
 import { Flask } from "tabler-icons-react";
 
 import HeaderDemo from "../Components/header";
+import OrganizerEventSlots from "./OrganizerSlots";
 
 function AttendeeEventSlots(props: {
-  head:
+  event:
+    | any; 
+  date:
+    | string
+    | number
+    | boolean
+    | any
+    | ReactElement<any, string | JSXElementConstructor<any>>
+    | ReactFragment
+    | ReactPortal
+    | null
+    | undefined;
+  start_time:
     | string
     | number
     | boolean
@@ -29,7 +44,7 @@ function AttendeeEventSlots(props: {
     | ReactPortal
     | null
     | undefined;
-  description:
+  end_time:
     | string
     | number
     | boolean
@@ -38,7 +53,7 @@ function AttendeeEventSlots(props: {
     | ReactPortal
     | null
     | undefined;
-  attendees:
+  credit_hours:
     | string
     | number
     | boolean
@@ -47,15 +62,15 @@ function AttendeeEventSlots(props: {
     | ReactPortal
     | null
     | undefined;
-  organizer:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  //   attd:
+  //   | any;
+  // setAttd:
+  //   | any;
+  boundary:
+    | any;
+  timer:
+    | any;
+    
 }) {
   const theme = useMantineTheme();
 
@@ -66,6 +81,7 @@ function AttendeeEventSlots(props: {
   const [attendence, setAttendence] = useState(false);
 
   function markAttendence() {
+    
     setAttendence(true);
     return console.log("Attendence Marked");
   }
@@ -88,9 +104,31 @@ function AttendeeEventSlots(props: {
   //   </>
   //         )
 
-  return (
+
+//   const url = 'https://chall.free.beeceptor.com/yaar'
+//   const tett: any = []
+//   fetch (url).then((res) => res.json()).then((data) => {
+// console.log(data.result)
+
+
+     return (
     <div>
+      
+     {/* <Button onClick={()=> {fetch(url).then((res) => res.json().then((data) => console.log(data.age)))}}>ff</Button>
+     */}
+     
+  
       <HeaderDemo />
+      <Paper>
+        <Text
+          variant="gradient"
+          gradient={{ from: "indigo", to: "cyan", deg: 45 }}
+          size="xl"
+          weight={1000}
+        >
+          Attendee Slots
+        </Text>
+      </Paper>
       <Space h="xl" />
       <Space w="xl" />
       <Card
@@ -105,13 +143,20 @@ function AttendeeEventSlots(props: {
         <Card.Section>
           {/* <Image src="./image.png" height={160} alt="Norway" /> */}
         </Card.Section>
-
+      
         <Group
+      
           position="apart"
           style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
         >
-          <Text weight={500}>{props.head}</Text>
 
+<Text weight={500}>{props.event}</Text>
+          {/* <div>
+          { props.head.map((attD: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined) => (
+          
+          <Text weight={500}>{attD}</Text>
+          ))}
+          </div> */}
           <Group>
             {" "}
             <Badge hidden color="red" variant="outline">
@@ -128,10 +173,10 @@ function AttendeeEventSlots(props: {
         </Group>
 
         <Text size="sm" style={{ color: secondaryColor, lineHeight: 1.5 }}>
-          {/* Name: {props.name} {<br/>}  */}
-          Start Time: {props.description} {<br />}
-          End Time: {props.attendees} {<br />}
-          Credit Hours: {props.organizer} {<br />}
+          Date: {props.date} {<br/>} 
+           Start Time: {props.start_time} {<br />}
+          End Time: {props.end_time} {<br />}
+          Credit Hours: {props.credit_hours} {<br />} 
         </Text>
 
         <Button

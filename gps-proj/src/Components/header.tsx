@@ -44,7 +44,7 @@ function HeaderDemo() {
         >
           Join Class
         </Menu.Item>
-        <Menu.Item icon={<MessageCircle size={14} />}>Events</Menu.Item>
+        {/* <Menu.Item icon={<MessageCircle size={14} />}>Events</Menu.Item>
         <Menu.Item icon={<Photo size={14} />}>Gallery</Menu.Item>
         <Menu.Item
           icon={<Search size={14} />}
@@ -65,7 +65,7 @@ function HeaderDemo() {
         </Menu.Item>
         <Menu.Item color="red" icon={<Trash size={14} />}>
           Delete my account
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>
 
       <Modal

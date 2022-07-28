@@ -36,9 +36,12 @@ function OrganizerViewSlotAttendence() {
     >
       <thead>
         <tr>
-          <th>Name</th>
+          <th>Attendee</th>
           <th>Classes Attended</th>
           <th>Total Classes</th>
+          <th>Time</th>
+          <th>Distance</th>
+
         </tr>
       </thead>
       <tbody>{rows}</tbody>

@@ -7,6 +7,7 @@ import {
   useMantineTheme,
   Space,
   Modal,
+  Paper,
 } from "@mantine/core";
 import {
   useState,
@@ -64,9 +65,18 @@ function AttendeeEventTiles(props: {
 
   const [opened, setOpened] = useState(false);
   return (
-    
     <div>
-      <HeaderDemo/>
+      <HeaderDemo />
+      <Paper>
+        <Text
+          variant="gradient"
+          gradient={{ from: "indigo", to: "cyan", deg: 45 }}
+          size="xl"
+          weight={1000}
+        >
+          Attendee Events
+        </Text>
+      </Paper>
       <Space h="xl" />
       <Space w="xl" />
       <Card
@@ -87,9 +97,9 @@ function AttendeeEventTiles(props: {
           style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
         >
           <Text weight={500}>{props.head}</Text>
-          <Badge color="red" variant="outline">
+          {/* <Badge color="red" variant="outline">
             On Sale
-          </Badge>
+          </Badge> */}
         </Group>
 
         <Text size="sm" style={{ color: secondaryColor, lineHeight: 1.5 }}>
@@ -100,7 +110,8 @@ function AttendeeEventTiles(props: {
         </Text>
 
         <Button
-           variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}
+          variant="gradient"
+          gradient={{ from: "teal", to: "lime", deg: 105 }}
           color="blue"
           fullWidth
           style={{ marginTop: 14 }}
@@ -126,27 +137,26 @@ function AttendeeEventTiles(props: {
         title="View:"
       >
         <Link to="AttendeeSlots">
-        <Button
-          color="violet"
-          radius="xl"
-          size="md"
-          style={{ margin: "0 36%", justifySelf:'center'}}
-          
-        >
-          Slots
-        </Button>
+          <Button
+            color="violet"
+            radius="xl"
+            size="md"
+            style={{ margin: "0 36%", justifySelf: "center" }}
+          >
+            Slots
+          </Button>
         </Link>
-        <Space h={20}/>
+        <Space h={20} />
 
         <Link to="AttendeeAttendence">
-        <Button
-          color="violet"
-          radius="xl"
-          size="md"
-          style={{ margin: "0 30%", justifySelf:'center'}}
-        >
-          Attendence
-        </Button>
+          <Button
+            color="violet"
+            radius="xl"
+            size="md"
+            style={{ margin: "0 30%", justifySelf: "center" }}
+          >
+            Attendence
+          </Button>
         </Link>
       </Modal>
     </div>

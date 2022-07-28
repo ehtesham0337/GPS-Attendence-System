@@ -37,6 +37,20 @@ function SignUp() {
         alignItems: "center",
       }}
     >
+      <Paper>
+          <Text
+            component="span"
+            align="center"
+            variant="gradient"
+            gradient={{ from: 'indigo', to: 'cyan', deg: 45 }}
+            size="xl"
+            weight={1000}
+            style={{ fontFamily: "OpenSans, sans-serif", margin: 0 }}
+          >
+           
+            GPS based Attendence System 
+          </Text>
+          </Paper>
       <Center style={{ width: 400, height: 200 }}>
         <Paper>
           <Text
@@ -48,11 +62,13 @@ function SignUp() {
             weight={900}
             style={{ fontFamily: "Greycliff CF, sans-serif", margin: 0 }}
           >
-            Sign Up / Login
+           
+            Sign Up / Login 
           </Text>
         </Paper>
       </Center>
       <Box sx={{ maxWidth: 300 }} mx="auto">
+        let chall = []
         <form onSubmit={form.onSubmit((values) => console.log(values))}>
           <TextInput
             required

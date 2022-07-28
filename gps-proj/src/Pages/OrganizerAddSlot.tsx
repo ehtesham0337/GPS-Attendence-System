@@ -1,66 +1,55 @@
-import {
-    Card,
-    Text,
-    Badge,
-    Button,
-    Group,
-    useMantineTheme,
-    Space,
-    Modal,
-    TextInput,
-    Box
- 
-  } from "@mantine/core";
+import { Button, Group } from "@mantine/core";
+import { AnyTxtRecord } from "dns";
+import { useState } from "react";
+import Countdown from "react-countdown";
+
+
+const PlzTime = (props: {time: | any;}) => {
   
-import { useForm } from '@mantine/form';
+const [time,setTime]  = useState(true);
 
-import AttendeeEventTiles from "./AttendeeEvents";
 
- function OrgAddEvent() {
+const Dumm = () => <div>{"Attendence CLosed"}</div>
 
-const form = useForm({
-    initialValues: {
-      Name: '',
-      Description: '',
-      Organizer: ''
-    }
-})
-
-function FunAddEventOrg (props: {Name : | string; Description : | string; Organizer: |string;  }){
+function chalo() {
   return(
-      <AttendeeEventTiles head={props.Name} description={props.Description} attendees={0} organizer={props.Organizer} />
+    <Countdown  date={Date.now() + props.time}>
+    <Dumm/>
+</Countdown>
   )
 }
 
-return (
+function displayTT(){
+  if(time){
     
-    <Box sx={{ maxWidth: 300 }} mx="auto">
-    <form onSubmit={form.onSubmit((values) => FunAddEventOrg(values))}>
-    <TextInput
-      required
-      label="Email"
-      placeholder="your@email.com"
-      {...form.getInputProps('Name')}
-    />
-    <TextInput
-      required
-      label="Email"
-      placeholder="your@email.com"
-      {...form.getInputProps('Description')}
-    />
-    <TextInput
-      required
-      label="Email"
-      placeholder="your@email.com"
-      {...form.getInputProps('Organizer')}
-    />
-    <Group position="right" mt="md">
-      <Button type="submit">Submit</Button>
-    </Group>
-  </form>
-</Box>
+    return(
+      
+      "Sorry its closed"
+    )
+  }
+  else if (!time){
+    return (
+      <>
+   {chalo()}
+    
+      </>
+    )
+  }
+}
 
+return (
+  <div>
+      {displayTT()}
+      <Group position="apart">
+      <Button color="indigo"
+              variant="outline" onClick={() => setTime(false)}>Start Timer</Button>
+      
+      <Button color="orange"
+              variant="outline" onClick={() => setTime(true)}>Close Timer</Button>
+              </Group>
+
+  </div>
 )
 }
 
-export default OrgAddEvent
+export default PlzTime
