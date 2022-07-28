@@ -24,7 +24,6 @@ function AttendeeEventTiles(props: {
   head:
     | string
     | number
-    | boolean
     | ReactElement<any, string | JSXElementConstructor<any>>
     | ReactFragment
     | ReactPortal
@@ -33,7 +32,6 @@ function AttendeeEventTiles(props: {
   description:
     | string
     | number
-    | boolean
     | ReactElement<any, string | JSXElementConstructor<any>>
     | ReactFragment
     | ReactPortal
@@ -42,7 +40,6 @@ function AttendeeEventTiles(props: {
   attendees:
     | string
     | number
-    | boolean
     | ReactElement<any, string | JSXElementConstructor<any>>
     | ReactFragment
     | ReactPortal
@@ -51,7 +48,6 @@ function AttendeeEventTiles(props: {
   organizer:
     | string
     | number
-    | boolean
     | ReactElement<any, string | JSXElementConstructor<any>>
     | ReactFragment
     | ReactPortal

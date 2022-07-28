@@ -27,7 +27,10 @@ const GetUserLocation = () =>  {
         <h1>Coordinates</h1>
         <p>{status}</p>
         {lat && <p>Latitude: {lat}</p>}
-        {lng && <p>Longitude: {lng}</p>}
+        {lng && <p>Longitude: {lng}</p>} 
+
+  
+
       </div>
   )
   }

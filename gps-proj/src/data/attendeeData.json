@@ -1,4 +1,6 @@
-{
+[
+    {
+    "id":1,
     "event": "project_eval",
     "date": "2022-07-31",
     "start_time": "16:53:21",
@@ -6,4 +8,18 @@
     "credit_hours": 7,
     "timer": 231321333,
     "boundary": 10
-}
+    },
+    {
+        "id":2,
+    "event": "project_vval",
+    "date": "2022-07-30",
+    "start_time": "16:53:66",
+    "end_time": "21:00:05",
+    "credit_hours": 8,
+    "timer": 231321333,
+    "boundary": 8
+    }
+
+
+
+]

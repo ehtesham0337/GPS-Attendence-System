@@ -68,7 +68,7 @@ function SignUp() {
         </Paper>
       </Center>
       <Box sx={{ maxWidth: 300 }} mx="auto">
-        let chall = []
+        
         <form onSubmit={form.onSubmit((values) => console.log(values))}>
           <TextInput
             required

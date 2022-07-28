@@ -1,0 +1,20 @@
+[
+    {
+        "event": {
+            "id": 1,
+            "name": "ITECH2022",
+            "description": "jncsndkcnadsldfjksddfnklsanf",
+            "organizer": "mike",
+            "attendee_count": 10
+        }
+    },
+    {
+        "event": {
+            "id": 3,
+            "name": "Hector_Funeral",
+            "description": "the funeral of hector salamanca held at the pool of donnel audio, the same place where donnel audio drowned.",
+            "organizer": "Gustavo_Fring",
+            "attendee_count": 4
+        }
+    }
+]
